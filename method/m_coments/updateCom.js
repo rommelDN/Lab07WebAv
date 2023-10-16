@@ -29,7 +29,7 @@ module.exports = async function updateCom(postId, commentIndex, updatedComment) 
       { _id: postIdInt },
       { $set: { comentarios: postExists.comentarios } }
     );
-    if (result.modifiedCount === 1) {
+    if (result.modifiedCount) {
       console.log("Comentario actualizado con éxito.");
       return updatedCommentData; // Devuelve el comentario actualizado.
     } else {

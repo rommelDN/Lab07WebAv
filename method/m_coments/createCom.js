@@ -22,7 +22,7 @@ module.exports = async function createCom(postId, newComment) {
         { _id: postIdInt }, // Filtra el documento por su _id (como número entero)
         { $push: { comentarios: comment } } // Agrega el comentario al array "comentarios"
       );
-      if (result.modifiedCount === 1) {
+      if (result.modifiedCount) {
         console.log("Nuevo comentario agregado con éxito.");
         return comment; // Devuelve el comentario creado.
       } else {
