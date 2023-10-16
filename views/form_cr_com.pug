@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Nuevo Comentario
+    body 
+        h1 Nuevo Comentario
+        form(action="/Create_com", method="POST")
+            label(for="_id") _id del post:
+            input(type="text", name="_id", id="_id")
+
+            label(for="autor") Autor:
+            input(type="text", name="autor", id="autor")
+
+            label(for="mensaje") Mensaje:
+            textarea(name="mensaje", id="mensaje", rows="4")
+
+            label(for="fecha") Fecha:
+            input(type="date", name="fecha", id="fecha")
+
+            button(type="submit") Agregar Comentario
+

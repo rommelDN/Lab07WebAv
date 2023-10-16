@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title Editar Post
+  body
+    h1 Editar Post
+
+    form(action="/Update_post", method="POST")
+      label(for="_id") ID del Post:
+      input(type="text", name="_id", required)
+
+      label(for="titulo") Título:
+      input(type="text", name="titulo")
+
+      label(for="descripcion") Descripción:
+      textarea(name="descripcion")
+
+      label(for="categoria") Categoría:
+      input(type="text", name="categoria")
+
+      label(for="fecha") Fecha:
+      input(type="date", name="fecha")
+
+      button(type="submit") Editar Post

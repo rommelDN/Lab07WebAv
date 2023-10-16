@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Eliminar Post
+  body
+    h1 Eliminar Post
+
+    form(action="/Delete_post", method="POST")
+      label(for="_id") ID del Post a Eliminar:
+      input(type="text", name="_id", required)
+
+      button(type="submit") Eliminar Post
