@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/List_post', async (req, res) => {
   try {
     const documents = await listPost(); // Espera a que la promesa se resuelva
-    res.json(documents); // Devuelve los documentos como respuesta en formato JSON.
+    res.render('list_posts', { documents }); // Renderiza la vista y pasa los documentos como datos
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener los documentos' });
   }
@@ -49,7 +49,8 @@ app.post('/Create_post', async (req, res) => {
 
     if (createdPost) {
       console.log("Nuevo post creado:", createdPost);
-      res.status(201).json(createdPost); // Devuelve el nuevo post como respuesta
+      //res.status(201).json(createdPost); // Devuelve el nuevo post como respuesta
+      res.redirect('/List_post');
     } else {
       console.log("No se pudo crear el nuevo post.");
       res.status(500).json({ error: 'No se pudo crear el nuevo post' });

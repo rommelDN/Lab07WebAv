@@ -1,23 +1,28 @@
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Nuevo Comentario
-    body 
-        h1 Nuevo Comentario
-        form(action="/Create_com", method="POST")
-            label(for="_id") _id del post:
-            input(type="text", name="_id", id="_id")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Nuevo Comentario
+  body
+    h1(style="text-align: center; margin-top: 20px;") Nuevo Comentario
 
-            label(for="autor") Autor:
-            input(type="text", name="autor", id="autor")
+    form(action="/Create_com", method="POST" style="max-width: 400px; margin: 0 auto;")
+      .form-group
+        label(for="_id") _id del post:
+        input(type="text", name="_id", id="_id", class="form-control")
 
-            label(for="mensaje") Mensaje:
-            textarea(name="mensaje", id="mensaje", rows="4")
+      .form-group
+        label(for="autor") Autor:
+        input(type="text", name="autor", id="autor", class="form-control")
 
-            label(for="fecha") Fecha:
-            input(type="date", name="fecha", id="fecha")
+      .form-group
+        label(for="mensaje") Mensaje:
+        textarea(name="mensaje", id="mensaje", rows="4", class="form-control")
 
-            button(type="submit") Agregar Comentario
+      .form-group
+        label(for="fecha") Fecha:
+        input(type="date", name="fecha", id="fecha", class="form-control")
 
+      .form-group(style="text-align: center; margin-top: 20px;")
+        button(type="submit", class="btn btn-primary") Agregar Comentario

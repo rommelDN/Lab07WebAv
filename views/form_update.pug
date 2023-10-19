@@ -3,22 +3,28 @@ html
   head
     title Editar Post
   body
-    h1 Editar Post
+    h1(style="text-align: center; margin-top: 20px;") Editar Post
 
-    form(action="/Update_post", method="POST")
-      label(for="_id") ID del Post:
-      input(type="text", name="_id", required)
+    form(action="/Update_post", method="POST" style="max-width: 400px; margin: 0 auto;")
+      .form-group
+        label(for="_id") ID del Post:
+        input(type="text", name="_id", class="form-control", required)
 
-      label(for="titulo") Título:
-      input(type="text", name="titulo")
+      .form-group
+        label(for="titulo") Título:
+        input(type="text", name="titulo", class="form-control")
 
-      label(for="descripcion") Descripción:
-      textarea(name="descripcion")
+      .form-group
+        label(for="descripcion") Descripción:
+        textarea(name="descripcion", class="form-control")
 
-      label(for="categoria") Categoría:
-      input(type="text", name="categoria")
+      .form-group
+        label(for="categoria") Categoría:
+        input(type="text", name="categoria", class="form-control")
 
-      label(for="fecha") Fecha:
-      input(type="date", name="fecha")
+      .form-group
+        label(for="fecha") Fecha:
+        input(type="date", name="fecha", class="form-control")
 
-      button(type="submit") Editar Post
+      .form-group(style="text-align: center; margin-top: 20px;")
+        button(type="submit", class="btn btn-primary") Editar Post

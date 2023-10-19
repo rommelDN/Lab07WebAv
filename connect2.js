@@ -13,7 +13,8 @@ const client = new MongoClient(uri, {
 // Exporta la colección como un módulo
 module.exports = async function getBlogCollection() {
   try {
-    await client.connect();
+
+    await client.connect();//se utiliza para esperar que se complete una operación asincrónica antes de continuar con el flujo de ejecución del programa. 
     console.log("Connected to MongoDB Atlas!");
 
     // Selecciona la base de datos y la colección
